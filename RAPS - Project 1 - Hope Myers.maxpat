@@ -40,6 +40,96 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-27",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 526.0, 803.0, 53.0, 24.0 ],
+					"text" : "wind"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1751.5, 288.0, 76.0, 24.0 ],
+					"text" : "Rainstick"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"extract" : 1,
+					"id" : "obj-8",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bp.Cell-MIDI.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 367.0, 572.0, 217.0, 116.0 ],
+					"varname" : "bp.Cell-MIDI",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "## VIZZIE video projector interface ##",
+					"bgmode" : 1,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-7",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "vz.projectr.maxpat",
+					"numinlets" : 4,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 659.5, 2781.0, 168.0, 108.0 ],
+					"prototypename" : "pixl",
+					"varname" : "projectr",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"extract" : 1,
+					"id" : "obj-2",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bp.Stereo.maxpat",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 367.0, 757.0, 148.0, 116.0 ],
+					"varname" : "bp.Stereo[1]",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"annotation" : "## Re-scale VIZZIE data input to a new data range ##",
 					"bgmode" : 1,
 					"border" : 0,
@@ -260,7 +350,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 659.5, 2772.0, 788.0, 520.0 ]
+					"patching_rect" : [ 1010.5, 2786.0, 788.0, 520.0 ]
 				}
 
 			}
@@ -1045,6 +1135,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
+					"order" : 2,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
 					"order" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
@@ -1102,6 +1200,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-56", 0 ],
+					"order" : 0,
+					"source" : [ "obj-55", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 1,
 					"source" : [ "obj-55", 0 ]
 				}
 
@@ -1163,6 +1270,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-64", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 1 ],
+					"order" : 0,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"order" : 1,
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
@@ -1367,6 +1490,10 @@
 			"obj-25::obj-50" : [ "Slide Up[2]", "Slide Up", 0 ],
 			"obj-25::obj-51" : [ "pictctrl[54]", "pictctrl[2]", 0 ],
 			"obj-25::obj-6" : [ "range[11]", "range", 0 ],
+			"obj-2::obj-22" : [ "Mute[3]", "Mute", 0 ],
+			"obj-2::obj-52" : [ "Level[1]", "Level", 0 ],
+			"obj-2::obj-55" : [ "DSP[1]", "DSP", 0 ],
+			"obj-2::obj-56" : [ "OutputChannel[1]", "OutputChannel", 0 ],
 			"obj-31::obj-13" : [ "pictctrl[218]", "pictctrl[1]", 0 ],
 			"obj-31::obj-3" : [ "range[27]", "range", 0 ],
 			"obj-31::obj-37" : [ "Y offset", "Y offset", 0 ],
@@ -1512,7 +1639,7 @@
 			"obj-57::obj-33" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"obj-57::obj-37" : [ "pictctrl[261]", "pictctrl[1]", 0 ],
 			"obj-57::obj-39::obj-23" : [ "gswitch2[10]", "gswitch2", 0 ],
-			"obj-57::obj-45" : [ "pictctrl[194]", "pictctrl[1]", 0 ],
+			"obj-57::obj-45" : [ "pictctrl[194]", "swatch", 0 ],
 			"obj-57::obj-48" : [ "control", "Fade", 0 ],
 			"obj-57::obj-53" : [ "pictctrl[263]", "pictctrl[1]", 0 ],
 			"obj-57::obj-56::obj-23" : [ "gswitch2[9]", "gswitch2", 0 ],
@@ -1539,6 +1666,19 @@
 			"obj-6::obj-20" : [ "ModWheelActivityLED", "ModWheelActivityLED", 0 ],
 			"obj-6::obj-28" : [ "Bend", "Bend", 0 ],
 			"obj-6::obj-69" : [ "1voctled", "1voctled", 0 ],
+			"obj-7::obj-12" : [ "Fullscreen", "Fullscreen", 0 ],
+			"obj-7::obj-16" : [ "Toggle display", "Toggle display", 0 ],
+			"obj-7::obj-1::obj-23" : [ "gswitch2[11]", "gswitch2", 0 ],
+			"obj-7::obj-2" : [ "pictctrl[200]", "pictctrl[1]", 0 ],
+			"obj-7::obj-3" : [ "toggle", "toggle", 0 ],
+			"obj-7::obj-41" : [ "pictctrl[55]", "pictctrl[1]", 0 ],
+			"obj-7::obj-50" : [ "pictctrl[56]", "pictctrl[1]", 0 ],
+			"obj-7::obj-6" : [ "live.toggle[1]", "live.toggle", 0 ],
+			"obj-8::obj-14::obj-2" : [ "pastebang[2]", "pastebang", 0 ],
+			"obj-8::obj-20" : [ "mute[3]", "mute", 0 ],
+			"obj-8::obj-28" : [ "Duration[1]", "Duration", 0 ],
+			"obj-8::obj-48" : [ "Mype[1]", "Mype", 0 ],
+			"obj-8::obj-9" : [ "Note", "Note", 0 ],
 			"obj-9::obj-12" : [ "pictctrl[356]", "pictctrl[1]", 0 ],
 			"obj-9::obj-22" : [ "range[3]", "range", 0 ],
 			"obj-9::obj-38" : [ "Pen Size", "Pen Size", 0 ],
@@ -1810,6 +1950,22 @@
 ,
 				"obj-25::obj-51" : 				{
 					"parameter_longname" : "pictctrl[54]"
+				}
+,
+				"obj-2::obj-22" : 				{
+					"parameter_longname" : "Mute[3]"
+				}
+,
+				"obj-2::obj-52" : 				{
+					"parameter_longname" : "Level[1]"
+				}
+,
+				"obj-2::obj-55" : 				{
+					"parameter_longname" : "DSP[1]"
+				}
+,
+				"obj-2::obj-56" : 				{
+					"parameter_longname" : "OutputChannel[1]"
 				}
 ,
 				"obj-31::obj-13" : 				{
@@ -2143,6 +2299,34 @@
 				"obj-64::obj-70" : 				{
 					"parameter_longname" : "pictctrl[199]"
 				}
+,
+				"obj-7::obj-2" : 				{
+					"parameter_longname" : "pictctrl[200]"
+				}
+,
+				"obj-7::obj-41" : 				{
+					"parameter_longname" : "pictctrl[55]"
+				}
+,
+				"obj-7::obj-50" : 				{
+					"parameter_longname" : "pictctrl[56]"
+				}
+,
+				"obj-8::obj-14::obj-2" : 				{
+					"parameter_longname" : "pastebang[2]"
+				}
+,
+				"obj-8::obj-20" : 				{
+					"parameter_longname" : "mute[3]"
+				}
+,
+				"obj-8::obj-28" : 				{
+					"parameter_longname" : "Duration[1]"
+				}
+,
+				"obj-8::obj-48" : 				{
+					"parameter_longname" : "Mype[1]"
+				}
 
 			}
 ,
@@ -2152,84 +2336,98 @@
 		"dependency_cache" : [ 			{
 				"name" : "RAPS - Project 1 - Hope Myers.maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[1].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[2].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[3].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[4].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[5].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[6].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[7].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[8].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[9].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[10].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RAPS - Project 1 - Hope Myers[11].maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "RAPS - Project 1 - Hope Myers[12].maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "RAPS - Project 1 - Hope Myers[13].maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
@@ -2536,7 +2734,7 @@
 , 			{
 				"name" : "xfade.genjit",
 				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/jitter-examples/gen",
-				"patcherrelativepath" : "../Library/Application Support/Cycling '74/Max 8/Examples/jitter-examples/gen",
+				"patcherrelativepath" : "../../../Library/Application Support/Cycling '74/Max 8/Examples/jitter-examples/gen",
 				"type" : "gJIT",
 				"implicit" : 1
 			}
@@ -2613,6 +2811,24 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "vz.projectr.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "vzgl-context.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers/utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bp.Cell-MIDI.maxpat",
+				"bootpath" : "C74:/packages/BEAP/clippings/BEAP/MIDI",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "jit.mo.time.mxo",
 				"type" : "iLaX"
 			}
@@ -2659,6 +2875,7 @@
 						"Colorize" : 1.0,
 						"Colorize[1]" : 1.0,
 						"DSP" : 1.0,
+						"DSP[1]" : 1.0,
 						"Distortion" : 1.0,
 						"Distortion[1]" : 0.549017156862745,
 						"Duration" : 0.0,
@@ -2669,15 +2886,15 @@
 						"Function" : 10.0,
 						"Function[1]" : 10.0,
 						"Function[2]" : 15.0,
-						"G Xoffset" : 0.347018209228225,
-						"G Yoffset" : 0.347018209228225,
-						"G boundmode" : 0.69403641845645,
-						"G function" : 10.757564486074978,
-						"G multiplier" : 34.701820922822506,
-						"G rotation" : -110.146889355677956,
-						"G rotboundmode" : 0.69403641845645,
+						"G Xoffset" : 0.321065008951389,
+						"G Yoffset" : 0.321065008951389,
+						"G boundmode" : 0.642130017902779,
+						"G function" : 9.953015277493073,
+						"G multiplier" : 32.106500895138943,
+						"G rotation" : -128.833193554999582,
+						"G rotboundmode" : 0.642130017902779,
 						"G zoom" : -0.021768426336411,
-						"G zoom[1]" : -0.30596358154355,
+						"G zoom[1]" : -0.357869982097221,
 						"Gain" : 1.5,
 						"Gain[1]" : 0.0,
 						"Gain[2]" : 0.0,
@@ -2701,7 +2918,7 @@
 						"H value[7]" : 2.035921568627453,
 						"H value[8]" : 0.223503267973856,
 						"H value[9]" : 0.072614379084968,
-						"H zoom[6]" : 0.004859773922589,
+						"H zoom[6]" : -0.029718006727382,
 						"Invert" : 0.0,
 						"Jitter" : 0.5,
 						"Jitter[1]" : 0.5,
@@ -2712,7 +2929,7 @@
 						"Jitter[6]" : 0.509015522875817,
 						"Jitter[7]" : 0.51343954248366,
 						"Jitter[8]" : 0.560941993464052,
-						"Jitter[9]" : 0.50534477124183,
+						"Jitter[9]" : 0.536625,
 						"Lacunarity" : 2.0,
 						"Lacunarity[1]" : 3.0,
 						"Lacunarity[2]" : 2.0,
@@ -2724,6 +2941,7 @@
 						"Lacunarity[8]" : 0.223503267973856,
 						"Lacunarity[9]" : 0.072614379084968,
 						"Level" : -14.022756507205507,
+						"Level[1]" : -0.359110689347816,
 						"Multiplier" : 0.518992605958834,
 						"Mute" : 0.0,
 						"MuteCh1" : 0.0,
@@ -2731,9 +2949,12 @@
 						"MuteCh3" : 0.0,
 						"MuteCh4" : 0.0,
 						"Mute[1]" : 0.0,
-						"Mute[2]" : 1.0,
+						"Mute[2]" : 0.0,
+						"Mute[3]" : 0.0,
 						"Mute[4]" : 0.0,
 						"Mype" : 1.0,
+						"Mype[1]" : 0.0,
+						"Note" : 60.0,
 						"Offset" : 0.0,
 						"Offset[10]" : 0.05,
 						"Offset[1]" : 0.9,
@@ -2746,24 +2967,25 @@
 						"Offset[8]" : 0.627245098039216,
 						"Offset[9]" : 4.111751633986928,
 						"OutputChannel" : 0.0,
-						"Pen Size" : 0.938685813605651,
-						"Pen Size[1]" : 0.771653543307087,
-						"Pen Size[2]" : 0.736116623074939,
-						"Pen Size[3]" : 0.520646078422274,
-						"Pen Size[4]" : 0.347018209228225,
-						"R Xoffset" : 0.520646078422274,
-						"R boundmode" : 1.041292156844547,
-						"R function" : 16.140028431090482,
-						"R multiplier" : 52.06460784222736,
-						"R rotation" : 14.865176464037006,
-						"R rotboundmode" : 1.041292156844547,
-						"R y offset" : 0.520646078422274,
-						"R zoom" : 0.330337254756378,
+						"OutputChannel[1]" : 0.0,
+						"Pen Size" : 0.872302521355922,
+						"Pen Size[1]" : 0.0,
+						"Pen Size[2]" : 0.70159731110508,
+						"Pen Size[3]" : 0.485140996636309,
+						"Pen Size[4]" : 0.321065008951389,
+						"R Xoffset" : 0.485140996636309,
+						"R boundmode" : 0.970281993272618,
+						"R function" : 15.039370895725574,
+						"R multiplier" : 48.51409966363088,
+						"R rotation" : -10.698482421857648,
+						"R rotboundmode" : 0.970281993272618,
+						"R y offset" : 0.485140996636309,
+						"R zoom" : -0.007658050425476,
 						"Rate" : 650.629921259842604,
 						"Rcolorize" : 0.0,
 						"Rcolorize[1]" : 2.0,
 						"Rot boundmode" : 2.0,
-						"Rotation" : 340.248609198271083,
+						"Rotation" : 88.472591938187463,
 						"Sequence" : 1.0,
 						"Shading" : 0.5,
 						"Shading[1]" : 2.804709967320261,
@@ -2780,35 +3002,39 @@
 						"Swing amount" : 0.0,
 						"Swing enable" : 0.0,
 						"Sync" : 0.0,
-						"Tempo" : 10.0,
+						"Tempo" : 20.0,
+						"Toggle display" : 1.0,
 						"Tolerance" : 0.5,
 						"Transport" : 1.0,
 						"X crackle" : 8.0,
-						"X crackle[1]" : 50.534477124183006,
+						"X crackle[1]" : 53.662500000000001,
 						"X offset" : 46.456692913385787,
 						"Xoffset" : 0.0,
 						"Y crackle" : 2.0,
-						"Y crackle[1]" : 5.548102941176471,
+						"Y crackle[1]" : 5.829625,
 						"Y offset" : 54.976377952755882,
 						"Yoffset" : 0.0,
 						"Z crackle" : 0.5,
-						"Z crackle[1]" : 5.053447712418301,
-						"Zoom" : -0.764390536829142,
+						"Z crackle[1]" : 5.36625,
+						"Zoom" : 0.660495068358552,
 						"control" : 0.5,
 						"crossfade" : 0.401574803149606,
 						"enable" : 1.0,
 						"fold" : 1.0,
 						"gatepct" : 80.0,
 						"gswitch2[10]" : 1.0,
+						"gswitch2[11]" : 1.0,
 						"gswitch2[2]" : 1.0,
 						"gswitch2[3]" : 1.0,
 						"gswitch2[4]" : 1.0,
 						"gswitch2[6]" : 1.0,
 						"gswitch2[9]" : 1.0,
 						"live.tab" : 1.0,
+						"live.toggle[1]" : 0.0,
 						"live.toggle[2]" : 1.0,
 						"mute" : 0.0,
 						"mute[2]" : 0.0,
+						"mute[3]" : 0.0,
 						"number" : 0.248,
 						"number[1]" : 0.768,
 						"number[2]" : 0.264,
@@ -2819,25 +3045,27 @@
 						"swing" : 0.0,
 						"swing.amt" : 15.0,
 						"swing.base" : 1.0,
+						"toggle" : 1.0,
 						"umenu[3]" : 13.0,
 						"umenu[4]" : 1.0,
 						"Speed" : 0.104,
 						"Speed[1]" : 0.503937007874016,
-						"Zoom hi" : -3.007804817461761,
+						"Zoom hi" : -2.969613326438212,
 						"Zoom hi[1]" : -10.204724409448826,
-						"Zoom lo" : -0.465431444461556,
+						"Zoom lo" : -0.41157748400245,
 						"Zoom lo[1]" : -2.0,
 						"blob" : 						{
-							"Data Input" : [ 0.736116623074939 ],
-							"Data Input[1]" : [ 0.520211019607843 ],
+							"Data Input" : [ 0.70159731110508 ],
+							"Data Input[1]" : [ 0.377017359477124 ],
 							"Data Output High" : [ 0.248, 0.768 ],
 							"Data Output High[1]" : [ 0.264, 0.728 ],
 							"EditMode" : [ "All" ],
+							"Fullscreen" : [ 0 ],
 							"PatternGrid" : [ 3, 21, 1, 0, 10, 0, 4000, 7000, 8000, 10000, 11000, 13000, 17000, 18000, 20000, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ],
 							"Pulse" : [ "16n" ],
 							"Pulse[1]" : [ 4 ],
 							"Reset" : [ 1 ],
-							"Spectra" : [ 0.0, 0.0, 0.150151327252388, 0.312885612249374, 0.4756198823452, 0.587499678134918, 0.699379503726959, 0.69531112909317, 0.691242754459381, 0.687174439430237, 0.683106064796448, 0.679037690162659, 0.923139095306396, 0.953651785850525, 0.984164476394653, 0.963822662830353, 0.943480908870697, 0.902797341346741, 0.57732880115509, 0.25186026096344, 0.231518462300301, 0.211176678538322, 0.190834894776344, 0.312885612249374, 0.353569179773331, 0.353569179773331, 0.353569179773331, 0.292543828487396, 0.211176678538322, 0.170493111014366, 0.109467759728432, 0.089125975966454 ],
+							"Spectra" : [ 0.0, 0.0, 0.150151327252388, 0.312885612249374, 0.4756198823452, 0.587499678134918, 0.699379503726959, 0.69531112909317, 0.691242754459381, 0.687174439430237, 0.683106064796448, 0.679037690162659, 0.923139095306396, 0.953651785850525, 0.984164476394653, 0.963822662830353, 0.943480908870697, 0.902797341346741, 0.57732880115509, 0.25186026096344, 0.231518462300301, 0.211176678538322, 0.190834894776344, 0.312885612249374, 0.353569179773331, 0.353569179773331, 0.353569179773331, 0.292543828487396, 0.25186026096344, 0.190834894776344, 0.170493111014366, 0.12980954349041 ],
 							"Toggle_resync" : [ -1 ],
 							"Toggle_start" : [ 1 ],
 							"a_state" : [ 0.0, 0.0, 0.589533865451813, 0.589533865451813, 0.0, 0.118644155561924, 0.101695008575916, 0.016949243843555, 0.0, 0.0, 0.0, 0.050847548991442, 0.186440765857697, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.016949197277427, 0.050847548991442, 0.084745854139328, 0.118644155561924, 0.101695008575916 ],
@@ -2868,9 +3096,9 @@
 							"textbutton[7]" : [ 1 ],
 							"B zoomrange" : [ 0 ],
 							"G zoomrange" : [ 0 ],
-							"R zoomrange" : [ 1 ],
+							"R zoomrange" : [ 0 ],
 							"Zoom range" : [ 0 ],
-							"Zoom range[2]" : [ 1 ],
+							"Zoom range[2]" : [ 0 ],
 							"Zoom range[3]" : [ 1 ],
 							"textbutton[2]" : [ 1 ]
 						}
@@ -2882,7 +3110,7 @@
 			}
 ,
 			"snapshotlist" : 			{
-				"current_snapshot" : 11,
+				"current_snapshot" : 13,
 				"entries" : [ 					{
 						"filetype" : "C74Snapshot",
 						"version" : 2,
@@ -3559,6 +3787,42 @@
 						"origin" : "RAPS - Project 1 - Hope Myers",
 						"type" : "patcher",
 						"subtype" : "Undefined",
+						"embed" : 0,
+						"fileref" : 						{
+							"name" : "RAPS - Project 1 - Hope Myers[11]",
+							"filename" : "RAPS - Project 1 - Hope Myers[11].maxsnap",
+							"filepath" : "~/Documents/Max 8/Snapshots",
+							"filepos" : -1,
+							"snapshotfileid" : "3bd2db13e3a4c398634143839f43c3ac"
+						}
+
+					}
+, 					{
+						"filetype" : "C74Snapshot",
+						"version" : 2,
+						"minorversion" : 0,
+						"name" : "RAPS - Project 1 - Hope Myers[12]",
+						"origin" : "RAPS - Project 1 - Hope Myers",
+						"type" : "patcher",
+						"subtype" : "Undefined",
+						"embed" : 0,
+						"fileref" : 						{
+							"name" : "RAPS - Project 1 - Hope Myers[12]",
+							"filename" : "RAPS - Project 1 - Hope Myers[12].maxsnap",
+							"filepath" : "~/Documents/Max 8/Snapshots",
+							"filepos" : -1,
+							"snapshotfileid" : "e1605b780812b0c5b8fbeef31745cc9e"
+						}
+
+					}
+, 					{
+						"filetype" : "C74Snapshot",
+						"version" : 2,
+						"minorversion" : 0,
+						"name" : "RAPS - Project 1 - Hope Myers[13]",
+						"origin" : "RAPS - Project 1 - Hope Myers",
+						"type" : "patcher",
+						"subtype" : "Undefined",
 						"embed" : 1,
 						"snapshot" : 						{
 							"valuedictionary" : 							{
@@ -3592,6 +3856,7 @@
 									"Colorize" : 1.0,
 									"Colorize[1]" : 1.0,
 									"DSP" : 1.0,
+									"DSP[1]" : 1.0,
 									"Distortion" : 1.0,
 									"Distortion[1]" : 0.549017156862745,
 									"Duration" : 0.0,
@@ -3602,15 +3867,15 @@
 									"Function" : 10.0,
 									"Function[1]" : 10.0,
 									"Function[2]" : 15.0,
-									"G Xoffset" : 0.347018209228225,
-									"G Yoffset" : 0.347018209228225,
-									"G boundmode" : 0.69403641845645,
-									"G function" : 10.757564486074978,
-									"G multiplier" : 34.701820922822506,
-									"G rotation" : -110.146889355677956,
-									"G rotboundmode" : 0.69403641845645,
+									"G Xoffset" : 0.321065008951389,
+									"G Yoffset" : 0.321065008951389,
+									"G boundmode" : 0.642130017902779,
+									"G function" : 9.953015277493073,
+									"G multiplier" : 32.106500895138943,
+									"G rotation" : -128.833193554999582,
+									"G rotboundmode" : 0.642130017902779,
 									"G zoom" : -0.021768426336411,
-									"G zoom[1]" : -0.30596358154355,
+									"G zoom[1]" : -0.357869982097221,
 									"Gain" : 1.5,
 									"Gain[1]" : 0.0,
 									"Gain[2]" : 0.0,
@@ -3634,7 +3899,7 @@
 									"H value[7]" : 2.035921568627453,
 									"H value[8]" : 0.223503267973856,
 									"H value[9]" : 0.072614379084968,
-									"H zoom[6]" : 0.004859773922589,
+									"H zoom[6]" : -0.029718006727382,
 									"Invert" : 0.0,
 									"Jitter" : 0.5,
 									"Jitter[1]" : 0.5,
@@ -3645,7 +3910,7 @@
 									"Jitter[6]" : 0.509015522875817,
 									"Jitter[7]" : 0.51343954248366,
 									"Jitter[8]" : 0.560941993464052,
-									"Jitter[9]" : 0.50534477124183,
+									"Jitter[9]" : 0.536625,
 									"Lacunarity" : 2.0,
 									"Lacunarity[1]" : 3.0,
 									"Lacunarity[2]" : 2.0,
@@ -3657,6 +3922,7 @@
 									"Lacunarity[8]" : 0.223503267973856,
 									"Lacunarity[9]" : 0.072614379084968,
 									"Level" : -14.022756507205507,
+									"Level[1]" : -0.359110689347816,
 									"Multiplier" : 0.518992605958834,
 									"Mute" : 0.0,
 									"MuteCh1" : 0.0,
@@ -3664,9 +3930,12 @@
 									"MuteCh3" : 0.0,
 									"MuteCh4" : 0.0,
 									"Mute[1]" : 0.0,
-									"Mute[2]" : 1.0,
+									"Mute[2]" : 0.0,
+									"Mute[3]" : 0.0,
 									"Mute[4]" : 0.0,
 									"Mype" : 1.0,
+									"Mype[1]" : 0.0,
+									"Note" : 60.0,
 									"Offset" : 0.0,
 									"Offset[10]" : 0.05,
 									"Offset[1]" : 0.9,
@@ -3679,24 +3948,25 @@
 									"Offset[8]" : 0.627245098039216,
 									"Offset[9]" : 4.111751633986928,
 									"OutputChannel" : 0.0,
-									"Pen Size" : 0.938685813605651,
-									"Pen Size[1]" : 0.771653543307087,
-									"Pen Size[2]" : 0.736116623074939,
-									"Pen Size[3]" : 0.520646078422274,
-									"Pen Size[4]" : 0.347018209228225,
-									"R Xoffset" : 0.520646078422274,
-									"R boundmode" : 1.041292156844547,
-									"R function" : 16.140028431090482,
-									"R multiplier" : 52.06460784222736,
-									"R rotation" : 14.865176464037006,
-									"R rotboundmode" : 1.041292156844547,
-									"R y offset" : 0.520646078422274,
-									"R zoom" : 0.330337254756378,
+									"OutputChannel[1]" : 0.0,
+									"Pen Size" : 0.872302521355922,
+									"Pen Size[1]" : 0.0,
+									"Pen Size[2]" : 0.70159731110508,
+									"Pen Size[3]" : 0.485140996636309,
+									"Pen Size[4]" : 0.321065008951389,
+									"R Xoffset" : 0.485140996636309,
+									"R boundmode" : 0.970281993272618,
+									"R function" : 15.039370895725574,
+									"R multiplier" : 48.51409966363088,
+									"R rotation" : -10.698482421857648,
+									"R rotboundmode" : 0.970281993272618,
+									"R y offset" : 0.485140996636309,
+									"R zoom" : -0.007658050425476,
 									"Rate" : 650.629921259842604,
 									"Rcolorize" : 0.0,
 									"Rcolorize[1]" : 2.0,
 									"Rot boundmode" : 2.0,
-									"Rotation" : 340.248609198271083,
+									"Rotation" : 88.472591938187463,
 									"Sequence" : 1.0,
 									"Shading" : 0.5,
 									"Shading[1]" : 2.804709967320261,
@@ -3713,35 +3983,39 @@
 									"Swing amount" : 0.0,
 									"Swing enable" : 0.0,
 									"Sync" : 0.0,
-									"Tempo" : 10.0,
+									"Tempo" : 20.0,
+									"Toggle display" : 1.0,
 									"Tolerance" : 0.5,
 									"Transport" : 1.0,
 									"X crackle" : 8.0,
-									"X crackle[1]" : 50.534477124183006,
+									"X crackle[1]" : 53.662500000000001,
 									"X offset" : 46.456692913385787,
 									"Xoffset" : 0.0,
 									"Y crackle" : 2.0,
-									"Y crackle[1]" : 5.548102941176471,
+									"Y crackle[1]" : 5.829625,
 									"Y offset" : 54.976377952755882,
 									"Yoffset" : 0.0,
 									"Z crackle" : 0.5,
-									"Z crackle[1]" : 5.053447712418301,
-									"Zoom" : -0.764390536829142,
+									"Z crackle[1]" : 5.36625,
+									"Zoom" : 0.660495068358552,
 									"control" : 0.5,
 									"crossfade" : 0.401574803149606,
 									"enable" : 1.0,
 									"fold" : 1.0,
 									"gatepct" : 80.0,
 									"gswitch2[10]" : 1.0,
+									"gswitch2[11]" : 1.0,
 									"gswitch2[2]" : 1.0,
 									"gswitch2[3]" : 1.0,
 									"gswitch2[4]" : 1.0,
 									"gswitch2[6]" : 1.0,
 									"gswitch2[9]" : 1.0,
 									"live.tab" : 1.0,
+									"live.toggle[1]" : 0.0,
 									"live.toggle[2]" : 1.0,
 									"mute" : 0.0,
 									"mute[2]" : 0.0,
+									"mute[3]" : 0.0,
 									"number" : 0.248,
 									"number[1]" : 0.768,
 									"number[2]" : 0.264,
@@ -3752,25 +4026,27 @@
 									"swing" : 0.0,
 									"swing.amt" : 15.0,
 									"swing.base" : 1.0,
+									"toggle" : 1.0,
 									"umenu[3]" : 13.0,
 									"umenu[4]" : 1.0,
 									"Speed" : 0.104,
 									"Speed[1]" : 0.503937007874016,
-									"Zoom hi" : -3.007804817461761,
+									"Zoom hi" : -2.969613326438212,
 									"Zoom hi[1]" : -10.204724409448826,
-									"Zoom lo" : -0.465431444461556,
+									"Zoom lo" : -0.41157748400245,
 									"Zoom lo[1]" : -2.0,
 									"blob" : 									{
-										"Data Input" : [ 0.736116623074939 ],
-										"Data Input[1]" : [ 0.520211019607843 ],
+										"Data Input" : [ 0.70159731110508 ],
+										"Data Input[1]" : [ 0.377017359477124 ],
 										"Data Output High" : [ 0.248, 0.768 ],
 										"Data Output High[1]" : [ 0.264, 0.728 ],
 										"EditMode" : [ "All" ],
+										"Fullscreen" : [ 0 ],
 										"PatternGrid" : [ 3, 21, 1, 0, 10, 0, 4000, 7000, 8000, 10000, 11000, 13000, 17000, 18000, 20000, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ],
 										"Pulse" : [ "16n" ],
 										"Pulse[1]" : [ 4 ],
 										"Reset" : [ 1 ],
-										"Spectra" : [ 0.0, 0.0, 0.150151327252388, 0.312885612249374, 0.4756198823452, 0.587499678134918, 0.699379503726959, 0.69531112909317, 0.691242754459381, 0.687174439430237, 0.683106064796448, 0.679037690162659, 0.923139095306396, 0.953651785850525, 0.984164476394653, 0.963822662830353, 0.943480908870697, 0.902797341346741, 0.57732880115509, 0.25186026096344, 0.231518462300301, 0.211176678538322, 0.190834894776344, 0.312885612249374, 0.353569179773331, 0.353569179773331, 0.353569179773331, 0.292543828487396, 0.211176678538322, 0.170493111014366, 0.109467759728432, 0.089125975966454 ],
+										"Spectra" : [ 0.0, 0.0, 0.150151327252388, 0.312885612249374, 0.4756198823452, 0.587499678134918, 0.699379503726959, 0.69531112909317, 0.691242754459381, 0.687174439430237, 0.683106064796448, 0.679037690162659, 0.923139095306396, 0.953651785850525, 0.984164476394653, 0.963822662830353, 0.943480908870697, 0.902797341346741, 0.57732880115509, 0.25186026096344, 0.231518462300301, 0.211176678538322, 0.190834894776344, 0.312885612249374, 0.353569179773331, 0.353569179773331, 0.353569179773331, 0.292543828487396, 0.25186026096344, 0.190834894776344, 0.170493111014366, 0.12980954349041 ],
 										"Toggle_resync" : [ -1 ],
 										"Toggle_start" : [ 1 ],
 										"a_state" : [ 0.0, 0.0, 0.589533865451813, 0.589533865451813, 0.0, 0.118644155561924, 0.101695008575916, 0.016949243843555, 0.0, 0.0, 0.0, 0.050847548991442, 0.186440765857697, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.016949197277427, 0.050847548991442, 0.084745854139328, 0.118644155561924, 0.101695008575916 ],
@@ -3801,9 +4077,9 @@
 										"textbutton[7]" : [ 1 ],
 										"B zoomrange" : [ 0 ],
 										"G zoomrange" : [ 0 ],
-										"R zoomrange" : [ 1 ],
+										"R zoomrange" : [ 0 ],
 										"Zoom range" : [ 0 ],
-										"Zoom range[2]" : [ 1 ],
+										"Zoom range[2]" : [ 0 ],
 										"Zoom range[3]" : [ 1 ],
 										"textbutton[2]" : [ 1 ]
 									}
@@ -3815,11 +4091,11 @@
 						}
 ,
 						"fileref" : 						{
-							"name" : "RAPS - Project 1 - Hope Myers[11]",
-							"filename" : "RAPS - Project 1 - Hope Myers[11].maxsnap",
+							"name" : "RAPS - Project 1 - Hope Myers[13]",
+							"filename" : "RAPS - Project 1 - Hope Myers[13].maxsnap",
 							"filepath" : "~/Documents/Max 8/Snapshots",
 							"filepos" : -1,
-							"snapshotfileid" : "3bd2db13e3a4c398634143839f43c3ac"
+							"snapshotfileid" : "583a9c79eeeeb9b2e32dbf86fd0cf0db"
 						}
 
 					}
